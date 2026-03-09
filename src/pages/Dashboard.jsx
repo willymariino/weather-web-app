@@ -7,11 +7,14 @@ function DashBoard() {
     // coordinate Lodi: latitude=45.3128 longitude=9.4978
     const endPoint = "https://api.open-meteo.com/v1/forecast?latitude=45.3128&longitude=9.4978&current=temperature_2m";
 
+    const [weather, setWeather] = useState([])
+
     function getWeather() {
 
         axios.get(endPoint)
             .then(res => {
                 console.log(res.data)
+                setWeather(res.data)
 
             })
             .catch(err => {
@@ -22,13 +25,22 @@ function DashBoard() {
 
     useEffect(getWeather, [])
 
-    return (
-        <>
+    if (weather && weather.current) { // il render del componente avviene solo quando ci sono dati da mostrare
 
-            <h1>Previsioni meteo di Lodi</h1>
+        return (
+            <>
+                <h1>Previsioni meteo di Lodi</h1>
+                <p>  Temperature: {weather.current.temperature_2m} {weather.current_units.temperature_2m} </p>
+                <p> Data rilevazione: {weather.current.time}</p>
+            </>
+        )
 
-        </>
-    )
+    }
+
+    else {
+        return (<></>)
+    }
+
 }
 
 export default DashBoard
