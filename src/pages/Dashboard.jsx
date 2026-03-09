@@ -21,6 +21,13 @@ function DashBoard() {
                 console.log(err)
             })
 
+
+
+    }
+
+    function update() {
+        setWeather([])
+        getWeather()
     }
 
     useEffect(getWeather, [])
@@ -32,13 +39,19 @@ function DashBoard() {
                 <h1>Previsioni meteo di Lodi</h1>
                 <p>  Temperature: {weather.current.temperature_2m} {weather.current_units.temperature_2m} </p>
                 <p> Data rilevazione: {weather.current.time}</p>
+
+                <button onClick={update}>
+                    aggiorna
+                </button>
             </>
         )
 
     }
 
     else {
-        return (<></>)
+        return (<>
+            loading
+        </>)
     }
 
 }
