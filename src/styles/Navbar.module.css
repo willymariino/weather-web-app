@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navList {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.navLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navLink:hover {
+    color: #1a2f8a;
+}
