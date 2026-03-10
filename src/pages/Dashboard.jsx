@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../styles/Dashboard.module.css"
-import getWeatherDescription from "../utility/weatherCodes";
+import styles from "../styles/Dashboard.module.css";
+import WeatherCard from "../components/weatherCard";
 
 function DashBoard() {
 
@@ -39,11 +39,8 @@ function DashBoard() {
         return (
             <>
                 <h1>Previsioni meteo di Lodi</h1>
-                <p>  Temperature: {weather.current.temperature_2m} {weather.current_units.temperature_2m} </p>
-                <p>Umidità: {weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m} </p>
-                <p>velocità del vento: {weather.current.wind_speed_10m} {weather.current_units.wind_speed_10m}</p>
-                <p>Cielo: {getWeatherDescription(weather.current.weathercode)}</p>
-                <p> Data rilevazione: {weather.current.time}</p>
+
+                <WeatherCard weather={weather} /> {/* importo la card passando la prop weather al componente figlio*/}
 
                 <button onClick={update} className={styles.updatebtn}>
                     aggiorna
