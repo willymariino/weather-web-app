@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import styles from "../styles/Dashboard.module.css"
 
 function DashBoard() {
 
     // endpoint API open-meteo.com
     // coordinate Lodi: latitude=45.3128 longitude=9.4978
-    const endPoint = "https://api.open-meteo.com/v1/forecast?latitude=45.3128&longitude=9.4978&current=temperature_2m";
+    const endPoint = "https://api.open-meteo.com/v1/forecast?latitude=45.3128&longitude=9.4978&current=temperature_2m,relative_humidity_2m,wind_speed_10m";
 
-    const [weather, setWeather] = useState([])
+    const [weather, setWeather] = useState(null)
 
     function getWeather() {
 
@@ -22,11 +23,10 @@ function DashBoard() {
             })
 
 
-
     }
 
-    function update() {
-        setWeather([])
+    function update() { // // svuota lo stato per dare un riscontro visivo all'utente durante il caricamento della nuova fetch request
+        setWeather(null)
         getWeather()
     }
 
@@ -38,9 +38,11 @@ function DashBoard() {
             <>
                 <h1>Previsioni meteo di Lodi</h1>
                 <p>  Temperature: {weather.current.temperature_2m} {weather.current_units.temperature_2m} </p>
+                <p>Umidità: {weather.current.relative_humidity_2m} {weather.current_units.relative_humidity_2m} </p>
+                <p>velocità del vento: {weather.current.wind_speed_10m} {weather.current_units.wind_speed_10m}</p>
                 <p> Data rilevazione: {weather.current.time}</p>
 
-                <button onClick={update}>
+                <button onClick={update} className={styles.updatebtn}>
                     aggiorna
                 </button>
             </>

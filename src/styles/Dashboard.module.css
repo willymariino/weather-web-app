@@ -1,0 +1,16 @@
+.updatebtn {
+    background-color: #3551f1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 35px;
+    color: white;
+    transition: all 0.8s;
+}
+
+.updatebtn:hover {
+    background-color: #1a2f8a;
+
+}
