@@ -38,7 +38,7 @@ function DashBoard() {
 
         return (
             <>
-                <h1>Previsioni meteo di Lodi</h1>
+                <h1>Condizioni meteo di Lodi</h1>
 
                 <WeatherCard weather={weather} /> {/* importo la card passando la prop weather al componente figlio*/}
 
