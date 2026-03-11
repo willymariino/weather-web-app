@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../styles/Dashboard.module.css";
 import WeatherCard from "../components/weatherCard";
+import Background from "../components/background";
 
 function DashBoard() {
 
@@ -34,27 +35,36 @@ function DashBoard() {
 
     useEffect(getWeather, [])
 
-    if (weather && weather.current) { // il render del componente avviene solo quando ci sono dati da mostrare
+    // if (weather && weather.current) { // il render del componente avviene solo quando ci sono dati da mostrare
 
-        return (
-            <>
-                <h1>Condizioni meteo di Lodi</h1>
+    return (
+        <>
+            <h1>Condizioni meteo di Lodi</h1>
 
-                <WeatherCard weather={weather} /> {/* importo la card passando la prop weather al componente figlio*/}
+            <Background />
 
-                <button onClick={update} className={styles.updatebtn}>
-                    aggiorna
-                </button>
-            </>
-        )
+            {weather && weather.current ? (
+                < WeatherCard weather={weather} />
+            ) : (
+                <div>
+                    loading
+                </div>
+            )}
 
-    }
+            {/* importo la card passando la prop weather al componente figlio*/}
+            <button onClick={update} className={styles.updatebtn}>
+                aggiorna
+            </button>
+        </>
+    )
 
-    else {
-        return (<>
-            loading
-        </>)
-    }
+    // }
+
+    // else {
+    //     return (<>
+    //         loading
+    //     </>)
+    // }
 
 }
 
