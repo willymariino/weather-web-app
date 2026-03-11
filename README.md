@@ -1,16 +1,30 @@
-# React + Vite
+# Lodi Weather App
+[![Live Demo](https://img.shields.io/badge/live-demo-brightgreen)](https://lodi-weather-app.netlify.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This is a React weather dashboard that displays the current weather conditions for Lodi, Italy using data from the Open-Meteo API.
+The application fetches live weather data — including temperature, humidity, wind speed and sky conditions — and presents it in a compact dashboard interface with a card layout and animated cloud background.
 
-Currently, two official plugins are available:
+## Features
+- **Current Weather Data:** Displays temperature, humidity, wind speed and sky conditions for Lodi, Italy.
+- **Weather Condition Description:** Converts Open-Meteo weather codes into readable weather descriptions.
+- **Manual Refresh:** Allows users to fetch the latest weather data on demand.
+- **Animated Cloud Background:** Dynamic background effect inspired by weather applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React** (19.2.0)
+- **Vite** (7.3.1)
+- **Axios** for HTTP request
+- **Open-Meteo:** [weather data API](https://open-meteo.com/)
+- **JavaScript (ES6)**
+- **CSS3** for styling
+- **Netlify** for live deployment
 
-## React Compiler
+## Live Demo
+[Lodi Weather App](https://lodi-weather-app.netlify.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to Run Locally
+1. Clone the repository.
+2. Install dependencies using `npm install`
+3. Start the development server using `npm run dev`
+4. Open the application in your browser at the URL provided by Vite.
