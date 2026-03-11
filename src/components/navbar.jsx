@@ -6,10 +6,11 @@ function Navbar() {
     return (
 
         <nav className={styles.navbar}>
-            <ul className={styles.navList}>
-                <li> <NavLink to="/" className={styles.navLink} >Homepage</NavLink> </li>
-                <li> <NavLink to="/settings" className={styles.navLink}>Impostazioni</NavLink> </li>
-            </ul>
+
+            <NavLink to="/" className={styles.navLink} >🏠</NavLink>
+            <h1>Meteo di Lodi</h1>
+            <NavLink to="/settings" className={styles.navLink}>🛠️</NavLink>
+
         </nav >
 
 

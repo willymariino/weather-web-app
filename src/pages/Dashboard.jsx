@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../styles/Dashboard.module.css";
 import WeatherCard from "../components/weatherCard";
-import Background from "../components/background";
+import LoadingCard from "../components/loadingCard";
 
 function DashBoard() {
 
@@ -39,16 +39,12 @@ function DashBoard() {
 
     return (
         <>
-            <h1>Condizioni meteo di Lodi</h1>
 
-            <Background />
 
             {weather && weather.current ? (
                 < WeatherCard weather={weather} />
             ) : (
-                <div>
-                    loading
-                </div>
+                <LoadingCard />
             )}
 
             {/* importo la card passando la prop weather al componente figlio*/}
