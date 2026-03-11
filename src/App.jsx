@@ -16,7 +16,6 @@ function App() {
           <Route Component={DefaultLayout}>
 
             <Route index Component={DashBoard} />
-            <Route path="/" Component={DashBoard} />
             <Route path="settings" Component={Settings} />
 
           </Route>

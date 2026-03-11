@@ -1,0 +1,33 @@
+.sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #1d4566, #6697b0);
+    height: 100vh;
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: url("/cloud-2.jpg");
+    background-repeat: repeat-x;
+    opacity: 0.5;
+    animation: moveClouds 100s linear infinite;
+    mix-blend-mode: screen;
+    background-size: cover;
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
