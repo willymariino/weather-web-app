@@ -2,12 +2,19 @@ import getWeatherDescription from "../utility/weatherCodes"
 
 function WeatherCard({ weather }) {
 
-    const formattedDate = new Date(weather.current.time).toLocaleDateString("it-IT", {
+    const date = new Date(weather.current.time)
+
+    const formattedDate = date.toLocaleDateString("it-IT", {
         weekday: "long",
         day: "numeric",
         month: "long",
         year: "numeric"
-    });
+    }) +
+        " - " + date.toLocaleTimeString("it-IT", {
+            hour: "2-digit",
+            minute: "2-digit"
+        })
+
 
     return (
         <>
