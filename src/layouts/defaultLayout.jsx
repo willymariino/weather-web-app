@@ -6,7 +6,7 @@ function DefaultLayout() {
 
     return (
         <>
-            <Background />
+            <Background /> {/* sfondo comune a tutte le pagine con posizionamento assoluto */}
             <Header />
             <Outlet />
         </>

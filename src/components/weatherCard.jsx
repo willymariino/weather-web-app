@@ -23,12 +23,12 @@ function WeatherCard({ weather }) {
 
                 <section className={styles.cardSection}>
                     <div className={styles.cardText}>{getWeatherDescription(weather.current.weathercode)}</div>
-                    <div className={styles.cardText}>  Temperatura: {weather.current.temperature_2m} {weather.current_units.temperature_2m} </div>
+                    <div className={styles.cardText}>Temperatura: <strong>{weather.current.temperature_2m} {weather.current_units.temperature_2m} </strong> </div>
                 </section>
 
                 <section className={styles.cardSection}>
-                    <div className={styles.cardText}>Umidità: {weather.current.relative_humidity_2m}{weather.current_units.relative_humidity_2m} </div>
-                    <div className={styles.cardText}>velocità del vento: {weather.current.wind_speed_10m} {weather.current_units.wind_speed_10m}</div>
+                    <div className={styles.cardText}>Umidità: <strong>{weather.current.relative_humidity_2m} {weather.current_units.relative_humidity_2m} </strong></div>
+                    <div className={styles.cardText}>Velocità del vento: <strong> {weather.current.wind_speed_10m} {weather.current_units.wind_speed_10m}</strong></div>
                 </section >
 
                 <div> aggiornato: {formattedDate}</div>

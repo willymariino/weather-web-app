@@ -35,32 +35,23 @@ function DashBoard() {
 
     useEffect(getWeather, [])
 
-    // if (weather && weather.current) { // il render del componente avviene solo quando ci sono dati da mostrare
-
     return (
         <>
 
-
+            {/* importo la card passando la prop weather al componente figlio */}
             {weather && weather.current ? (
                 < WeatherCard weather={weather} />
             ) : (
                 <LoadingCard />
             )}
 
-            {/* importo la card passando la prop weather al componente figlio*/}
+
             <button onClick={update} className={styles.updatebtn}>
                 aggiorna
             </button>
         </>
     )
 
-    // }
-
-    // else {
-    //     return (<>
-    //         loading
-    //     </>)
-    // }
 
 }
 

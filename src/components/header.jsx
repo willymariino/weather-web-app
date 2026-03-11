@@ -5,10 +5,7 @@ function Header() {
     return (
         <>
             <Navbar />
-            <h1 className={styles.title}>Weather Dashboard</h1>
-
-
-
+            <h2 className={styles.title}>Weather Dashboard</h2>
         </>
     )
 }

@@ -18,3 +18,7 @@
 .navLink:hover {
     color: #1a2f8a;
 }
+
+.navText {
+    color: white;
+}
